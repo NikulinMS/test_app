@@ -110,7 +110,7 @@ jobs:
       - name: Apply Kubernetes manifests
         run: |
           kubectl apply -f ./deploy/deployment.yaml
-          kubectl get deployments -n monitoring
+          kubectl get daemonsets -n monitoring
           kubectl get pods -n monitoring
-          kubectl describe deployment myapp -n monitoring
+          kubectl describe daemonset myapp -n monitoring
           kubectl describe service myapp-service -n monitoring
